@@ -1,0 +1,9 @@
+<h1>List of Floofs</h1>
+
+<ul>
+  <% @floofs.each do |floof| %>
+  <li>
+    <a href="/floofs/<%= floof.id %>"> <%= floof.name %> </a>
+  </li>
+  <% end %>
+</ul>

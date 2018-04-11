@@ -10,36 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170705195314) do
+ActiveRecord::Schema.define(version: 20180411144529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "clinics", force: :cascade do |t|
-    t.string "speaker", null: false
-    t.string "title", null: false
-    t.string "description"
-  end
-
-  create_table "comments", force: :cascade do |t|
-    t.string "asker", null: false
-    t.string "body", null: false
-    t.bigint "clinic_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["clinic_id"], name: "index_comments_on_clinic_id"
-  end
-
-  create_table "signups", force: :cascade do |t|
-    t.integer "clinic_id", null: false
-    t.bigint "student_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["student_id"], name: "index_signups_on_student_id"
-  end
-
-  create_table "students", force: :cascade do |t|
+  create_table "floofs", force: :cascade do |t|
     t.string "name", null: false
+    t.index ["name"], name: "index_floofs_on_name", unique: true
+  end
+
+  create_table "walkers", force: :cascade do |t|
+    t.string "name", null: false
+    t.index ["name"], name: "index_walkers_on_name", unique: true
+  end
+
+  create_table "walks", force: :cascade do |t|
+    t.bigint "floof_id"
+    t.bigint "walker_id"
+    t.string "day", null: false
+    t.index ["floof_id"], name: "index_walks_on_floof_id"
+    t.index ["walker_id"], name: "index_walks_on_walker_id"
   end
 
 end

@@ -1,0 +1,38 @@
+<h1  class="header"><%= @floof.name %></h1>
+
+
+<div class="details">
+  <h3>Walks for this floof:</h3>
+  <ul>
+    <% @walks.each do |walk| %>
+    <li>
+      <%= walk.walker.name %> - <%= walk.day %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
+
+<div class="grid-container">
+  <div class="grid-x grid-padding-x">
+    <form id='form' class='medium-6 columns callout' action="/walks" method="post">
+      <h3>Add Walk</h3>
+      <input name="floof_id" type="hidden" value="<%=@floof.id%>"/>
+      <label>Walker
+        <select name="walker_id">
+          <% @walkers.each do |walker| %>
+             <option value="<%=walker.id%>"><%=walker.name%></option>
+          <% end %>
+        </select>
+      </label>
+      <label>Day
+        <select name="day_id">
+          <% @days.each do |day| %>
+             <option value="<%=day%>"><%=day%></option>
+          <% end %>
+        </select>
+      </label>
+      <input type='submit' value="Submit"></input>
+    </form>
+  </div>
+</div>

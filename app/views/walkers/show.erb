@@ -1,0 +1,12 @@
+<h1><%= @walker.name %></h1>
+
+<h3>Walks:</h3>
+<ul>
+  <% @walker.walks.each do |walk| %>
+    <li>
+      <%= walk.floof.name  %> - <%= walk.day %>
+    </li>
+  <% end %>
+</ul>
+
+<a href="/">Back to Floofs</a>

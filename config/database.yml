@@ -2,7 +2,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: lornch_ablademy_development
+  database: floof_walks_development
   pool: 5
   username:
   password:
@@ -11,7 +11,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: lornch_ablademy_test
+  database: floof_walks_test
   pool: 5
   username:
   password:
@@ -20,7 +20,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: lornch_ablademy_production
+  database: floof_walks__production
   pool: 5
   username:
   password:

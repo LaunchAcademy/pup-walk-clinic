@@ -5,14 +5,11 @@
 #
 #   Person.create(first_name: 'Eric', last_name: 'Kelly')
 
-student1 = Student.create(name: "Steven Universe")
-student2 = Student.create(name: "Nick's Evil Twin Brother")
+floof1 = Floof.create(name: "Sir Geoffrey Drake Arrington")
+floof2 = Floof.create(name: "Miss Islay Mae Arrington")
 
-clinic1 = Clinic.create(name: "Big U Notation", speaker: "Rick", description: "The universe is infinitly complex")
-clinic2 = Clinic.create(name: "How to Sleep for Programmers", speaker: "Jenn", description: "don't listen to Nick")
+walker1 = Walker.create(name: "Brad")
+walker2 = Walker.create(name: "Elyse")
 
-r1 = Comment.create(clinic: clinic2, asker: "Birdperson", body: "Birdperson disagrees")
-r2 = Comment.create(clinic: clinic2, asker: "Nick", body: "(╯°□°)╯︵ ┻━┻")
-
-Signup.create(student: student1, clinic: clinic2)
-Signup.create(student: student1, clinic: clinic1)
+Walk.create(floof: floof1, walker: walker2, day: "Wednesday")
+Walk.create(floof: floof2, walker: walker1, day: "Friday")

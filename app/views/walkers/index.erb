@@ -1,0 +1,9 @@
+<h1>List of Walkers</h1>
+
+<ul>
+  <% @walkers.each do |walker| %>
+    <li>
+      <a href="/walkers/<%= walker.id %>"><%= walker.name %> </a>
+    </li>
+  <% end %>
+</ul>
