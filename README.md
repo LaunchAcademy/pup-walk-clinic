@@ -19,10 +19,9 @@ Note: `Before running your tests and after running migrations, be sure to run ra
 
     #### Walks
 
+    * Must have a day
     * Must belong to one pup
     * Must belong to one walker
-    * Must have a day
-    * Belongs to a single pup
 ```
 
 ## Part 2
