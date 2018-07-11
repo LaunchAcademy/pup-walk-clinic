@@ -16,6 +16,8 @@ Note: `Before running your tests and after running migrations, be sure to run ra
     #### Walkers
 
     * Must have a unique name
+    * A walker can have many walks
+    * A walker can have many
 
     #### Walks
 

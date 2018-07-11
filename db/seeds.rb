@@ -5,11 +5,11 @@
 #
 #   Person.create(first_name: 'Eric', last_name: 'Kelly')
 
-pup1 = pup.create(name: "Sir Geoffrey Drake Arrington")
-pup2 = pup.create(name: "Miss Islay Mae Arrington")
+pup1 = Pup.create!(name: "Sir Geoffrey Drake Arrington")
+pup2 = Pup.create!(name: "Miss Islay Mae Arrington")
 
-walker1 = Walker.create(name: "Brad")
-walker2 = Walker.create(name: "Elyse")
+walker1 = Walker.create!(name: "Brad")
+walker2 = Walker.create!(name: "Elyse")
 
-Walk.create(pup: pup1, walker: walker2, day: "Wednesday")
-Walk.create(pup: pup2, walker: walker1, day: "Friday")
+Walk.create!(pup: pup1, walker: walker2, day: "Wednesday")
+Walk.create!(pup: pup2, walker: walker1, day: "Friday")

@@ -17,7 +17,7 @@ get '/' do
 end
 
 get '/pups' do
-  @pups = pup.all
+  @pups = Pup.all
   erb :'/pups/index'
 end
 
@@ -26,7 +26,7 @@ get '/pups/new' do
 end
 
 get '/pups/:id' do
-  @pup = pup.find(params[:id])
+  @pup = Pup.find(params[:id])
   @walkers = Walker.all
   @walks = @pup.walks
   @days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -35,7 +35,7 @@ get '/pups/:id' do
 end
 
 post '/walks' do
-  @pup = pup.find(params[:pup_id])
+  @pup = Pup.find(params[:pup_id])
   @walker = Walker.find(params[:walker_id])
   @day = params[:day]
   walk = Walk.new(pup: @pup, walker: @walker, day: @day)
@@ -48,7 +48,7 @@ post '/walks' do
 end
 
 post '/pups' do
-  pup = pup.new(name: params[:name])
+  pup = Pup.new(name: params[:name])
     if pup.save
       flash[:message] = "Saved!"
       redirect "/pups"
