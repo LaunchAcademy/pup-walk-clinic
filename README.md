@@ -1,36 +1,33 @@
-# Welcome to Laurnch Ablademy!
+# Pup Walks
 
 Note: `Before running your tests and after running migrations, be sure to run rake db:test:prepare`
 
 ## Part 1
-  * For Part 1 we are going to focus on building our schema!
+  * For Part 1 we are going to focus on building our schema
 
   Create the migrations to build a schema, and models to represent the following data and object relationships:
 
     ```
-    #### Students
+    #### Pups
 
-    * A student must have name
-    * A student can attend many clinics
+    * A pup must have a unique name
+    * A pup can have many walks
 
-    #### Clinics
+    #### Walkers
 
-    * Must have a title
-    * Must have a speaker
-    * Can optionally have a description
-    * Can have many comments
-    * Can have many students
+    * Must have a unique name
 
-    #### Comments
+    #### Walks
 
-    * Must have an asker
-    * Must have a body
-    * Belongs to a single clinics
+    * Must belong to one pup
+    * Must belong to one walker
+    * Must have a day
+    * Belongs to a single pup
 ```
 
 ## Part 2
   * For Part 2 we will run our specs one at a time and get our code to pass!  Our erb templates and our routes have been pre-built... but how do we query for our necessary data???
-  * utilize pry in testing environment and in development (via `pry -r ./app.rb`) to poke around and look at our methods, associations, validation
+  * utilize pry in testing environment and in development (via `pry -r ./server.rb`) to poke around and look at our methods, associations, validation
 
 ## Part 3
   * Seed your development database with a Seeds file!  open up your app and poke around and make sure it works as you expect
