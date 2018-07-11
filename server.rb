@@ -13,48 +13,48 @@ configure do
 end
 
 get '/' do
-  redirect '/floofs'
+  redirect '/pups'
 end
 
-get '/floofs' do
-  @floofs = Floof.all
-  erb :'/floofs/index'
+get '/pups' do
+  @pups = pup.all
+  erb :'/pups/index'
 end
 
-get '/floofs/new' do
-  erb :'floofs/new'
+get '/pups/new' do
+  erb :'pups/new'
 end
 
-get '/floofs/:id' do
-  @floof = Floof.find(params[:id])
+get '/pups/:id' do
+  @pup = pup.find(params[:id])
   @walkers = Walker.all
-  @walks = @floof.walks
+  @walks = @pup.walks
   @days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
-  erb :'/floofs/show'
+  erb :'/pups/show'
 end
 
 post '/walks' do
-  @floof = Floof.find(params[:floof_id])
+  @pup = pup.find(params[:pup_id])
   @walker = Walker.find(params[:walker_id])
   @day = params[:day]
-  walk = Walk.new(floof: @floof, walker: @walker, day: @day)
+  walk = Walk.new(pup: @pup, walker: @walker, day: @day)
 
   if walk.save
-    redirect "/floofs/#{params[:floof_id]}"
+    redirect "/pups/#{params[:pup_id]}"
   else
-    erb :'floofs/show'
+    erb :'pups/show'
   end
 end
 
-post '/floofs' do
-  floof = Floof.new(name: params[:name])
-    if floof.save
+post '/pups' do
+  pup = pup.new(name: params[:name])
+    if pup.save
       flash[:message] = "Saved!"
-      redirect "/floofs"
+      redirect "/pups"
     else
       flash[:error] = "Bummer, something went wrong."
-      erb :'floofs/new'
+      erb :'pups/new'
     end
 end
 

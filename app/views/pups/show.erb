@@ -1,8 +1,8 @@
-<h1  class="header"><%= @floof.name %></h1>
+<h1  class="header"><%= @pup.name %></h1>
 
 
 <div class="details">
-  <h3>Walks for this floof:</h3>
+  <h3>Walks for this pup:</h3>
   <ul>
     <% @walks.each do |walk| %>
     <li>
@@ -17,7 +17,7 @@
   <div class="grid-x grid-padding-x">
     <form id='form' class='medium-6 columns callout' action="/walks" method="post">
       <h3>Add Walk</h3>
-      <input name="floof_id" type="hidden" value="<%=@floof.id%>"/>
+      <input name="pup_id" type="hidden" value="<%=@pup.id%>"/>
       <label>Walker
         <select name="walker_id">
           <% @walkers.each do |walker| %>
