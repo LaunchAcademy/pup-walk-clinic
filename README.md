@@ -1,7 +1,5 @@
 # Pup Walks
 
-Note: `Before running your tests and after running migrations, be sure to run rake db:test:prepare`
-
 ## Part 1
   * For Part 1 we are going to focus on building our schema
 
@@ -34,7 +32,9 @@ Note: `Before running your tests and after running migrations, be sure to run ra
   * Seed your development database with a Seeds file!  open up your app and poke around and make sure it works as you expect
 
 ## Important notes
+  * Work through this on your own as a TDD exercise. Write tests for the user stories and then develop your migrations and models from there.
   * This TDD is for practice to see errors when things aren't set up correctly on the model level for ActiveRecord, as we get more comfortable you should also feel comfortable doing this as a part of making the tables and models and testing it with pry and seed data
+  * Note: `Before running your tests and after running migrations, be sure to run rake db:test:prepare`
   * Although you have been introduced to the power of ActiveRecord, you should still have familiarity with SQL queries.  
     * After this clinic write a seed file in SQL and pipe it in with `$psql database_name < seeds.sql`, go in with `pry -r ./app.rb` and make sure the data persisted and with the expected relationships
     * Make a good ol' SQL query to find all the clinics that the first student has attended, and test it via `$psql database_name < query.sql`
