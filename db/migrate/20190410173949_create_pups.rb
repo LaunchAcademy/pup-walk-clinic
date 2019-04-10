@@ -1,0 +1,10 @@
+class CreatePups < ActiveRecord::Migration[5.2]
+  def change
+    create_table :pups do |t|
+      t.string :name, null:false
+
+      t.timestamps
+    end
+    add_index :pups, :name, unique: true
+  end
+end
