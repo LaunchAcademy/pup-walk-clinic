@@ -38,3 +38,4 @@ Note: `Before running your tests and after running migrations, be sure to run ra
   * Although you have been introduced to the power of ActiveRecord, you should still have familiarity with SQL queries.  
     * After this clinic write a seed file in SQL and pipe it in with `$psql database_name < seeds.sql`, go in with `pry -r ./app.rb` and make sure the data persisted and with the expected relationships
     * Make a good ol' SQL query to find all the clinics that the first student has attended, and test it via `$psql database_name < query.sql`
+# pup-walk-clinic
