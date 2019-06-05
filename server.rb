@@ -1,16 +1,9 @@
 require 'sinatra'
-require 'sinatra/activerecord'
-require "pry" if development? || test?
-require 'sinatra/flash'
-set :sessions, true
+require_relative 'config/application'
 
-Dir[File.join(File.dirname(__FILE__), 'app', '**', '*.rb')].each do |file|
-  require file
-end
+set :bind, '0.0.0.0'  # bind to all interfaces
 
-configure do
-  set :views, 'app/views'
-end
+enable :sessions
 
 get '/' do
   redirect '/pups'
