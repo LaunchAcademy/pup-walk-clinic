@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require "pry" if development? || test?
 require 'sinatra/flash'
+require 'sinatra/reloader'
 set :sessions, true
 
 Dir[File.join(File.dirname(__FILE__), 'app', '**', '*.rb')].each do |file|
@@ -48,12 +49,12 @@ post '/walks' do
 end
 
 post '/pups' do
-  pup = Pup.new(name: params[:name])
-    if pup.save
+  @pup = Pup.new(name: params[:name])
+    if @pup.save
       flash[:message] = "Saved!"
       redirect "/pups"
     else
-      flash[:error] = "Bummer, something went wrong."
+      flash.now[:error] = @pup.errors.full_messages.to_sentence
       erb :'pups/new'
     end
 end
@@ -77,7 +78,7 @@ end
 
 post '/walkers' do
   walker = Walker.new(name: params[:name])
-    if walker.save == false
+    if walker.save
       flash[:message] = "Saved!"
       redirect '/walkers'
     else
